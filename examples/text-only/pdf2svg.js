@@ -64,7 +64,7 @@ function pageLoaded() {
 
 document.addEventListener('DOMContentLoaded', function () {
   if (typeof pdfjsLib === 'undefined') {
-    alert('Built version of PDF.js was not found.\n' +
+    console.log('Built version of PDF.js was not found.\n' +
           'Please run `gulp dist-install`.');
     return;
   }

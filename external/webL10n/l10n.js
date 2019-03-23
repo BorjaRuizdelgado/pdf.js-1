@@ -31,7 +31,7 @@
 /*jshint browser: true, devel: true, es5: true, globalstrict: true */
 'use strict';
 
-document.webL10n = (function(window, document, undefined) {
+document.webL10n = (function(window, document, theVariable) {
   var gL10nData = {};
   var gTextData = '';
   var gTextProp = 'textContent';

@@ -1,0 +1,7 @@
+organization=borjaruizdelgado-github
+projectKey=BorjaRuizdelgado_pdf.js-1
+serverUrl=https://sonarcloud.io
+serverVersion=7.7.0.22792
+dashboardUrl=https://sonarcloud.io/dashboard?id=BorjaRuizdelgado_pdf.js-1
+ceTaskId=AWmsGflWO5STJbyX0717
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWmsGflWO5STJbyX0717

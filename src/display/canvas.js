@@ -1378,7 +1378,13 @@ var CanvasGraphics = (function CanvasGraphicsClosure() {
         ctx.save();
         ctx.translate(x, y);
         ctx.beginPath();
-        addToPath(ctx, fontSize);
+        try{
+          addToPath.addToPath(ctx, fontSize);
+        }
+        catch(e){
+          console.log(e)
+        }
+       
         if (patternTransform) {
           ctx.setTransform.apply(ctx, patternTransform);
         }

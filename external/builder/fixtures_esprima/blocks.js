@@ -1,5 +1,5 @@
 function test() {
-  {;}
+  /*{;}
   ;
   "test";
   {
@@ -15,5 +15,5 @@ function test() {
       }
     }
     "4";
-  }
+  }*/
 }

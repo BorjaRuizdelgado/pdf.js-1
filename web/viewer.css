@@ -42,7 +42,7 @@ body,
 input,
 button,
 select {
-  font: message-box;
+  font: sans-serif;
   outline: none;
 }
 
@@ -1027,7 +1027,6 @@ html[dir='rtl'] .verticalToolbarSeparator {
 .toolbarField {
   padding: 3px 6px;
   margin: 4px 0 4px 0;
-  border: 1px solid transparent;
   border-radius: 2px;
   background-color: hsla(0,0%,100%,.09);
   background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
@@ -1379,11 +1378,6 @@ html[dir='rtl'] .outlineItemToggler::before {
   background-color: #474747; /* fallback */
   background-image: url(images/texture.png),
                     linear-gradient(hsla(0,0%,32%,.99), hsla(0,0%,27%,.95));
-  box-shadow: inset 1px 0 0 hsla(0,0%,100%,.08),
-              inset 0 1px 1px hsla(0,0%,0%,.15),
-              inset 0 -1px 0 hsla(0,0%,100%,.05),
-              0 1px 0 hsla(0,0%,0%,.15),
-              0 1px 1px hsla(0,0%,0%,.1);
   border: 1px solid hsla(0,0%,0%,.5);
   border-radius: 4px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
@@ -1500,7 +1494,7 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
   background: none repeat scroll 0 0 yellow;
 }
 #PDFBug .stats {
-  font-family: courier;
+  font-family: sans-serif;
   font-size: 10px;
   white-space: pre;
 }

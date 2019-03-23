@@ -224,7 +224,7 @@ window.print = function print() {
           overlayManager.close('printServiceOverlay');
         }
       });
-      return; // eslint-disable-line no-unsafe-finally
+      //return; // eslint-disable-line no-unsafe-finally
     }
     let activeServiceOnEntry = activeService;
     activeService.renderPages().then(function() {

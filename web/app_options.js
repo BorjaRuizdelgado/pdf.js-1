@@ -259,7 +259,7 @@ class AppOptions {
     for (const name in defaultOptions) {
       const defaultOption = defaultOptions[name];
       if (kind) {
-        if ((kind & defaultOption.kind) === 0) {
+        if ((kind && defaultOption.kind) === 0) {
           continue;
         }
         if (kind === OptionKind.PREFERENCE) {

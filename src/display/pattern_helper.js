@@ -37,7 +37,13 @@ ShadingIRs.RadialAxial = {
 
         for (var i = 0, ii = colorStops.length; i < ii; ++i) {
           var c = colorStops[i];
-          grad.addColorStop(c[0], c[1]);
+          try{
+            grad.addColorStop(c[0], c[1]);
+          }
+          catch(e){
+            console.log("aaaaa te bañasteeee")
+          }
+          
         }
         return grad;
       },

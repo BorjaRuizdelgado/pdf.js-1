@@ -947,8 +947,13 @@ var JpegImage = (function JpegImageClosure() {
         }
         fileMarker = readUint16();
       }
-
-      this.width = frame.samplesPerLine;
+      try{
+        this.width = frame.samplesPerLine;
+      }
+      catch(e){
+        console.log(e);
+      }
+      
       this.height = frame.scanLines;
       this.jfif = jfif;
       this.adobe = adobe;

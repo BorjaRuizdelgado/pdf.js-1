@@ -484,7 +484,13 @@ function removeNullCharacters(str) {
 function bytesToString(bytes) {
   assert(bytes !== null && typeof bytes === 'object' &&
          bytes.length !== undefined, 'Invalid argument for bytesToString');
-  var length = bytes.length;
+  try{
+    var length = bytes.length;
+  }
+  catch(e){
+    console.log(e)
+  }
+  
   var MAX_ARGUMENT_COUNT = 8192;
   if (length < MAX_ARGUMENT_COUNT) {
     return String.fromCharCode.apply(null, bytes);

@@ -199,7 +199,7 @@ function startRefTest(masterMode, showRefImages) {
       console.log();
       console.log('Starting reftest harness to examine ' + numEqFailures +
                   ' eq test failures.');
-      examineRefImages(numEqFailures);
+      examineRefImages();
     }
   }
 
@@ -642,27 +642,32 @@ function startBrowsers(url, initSessionCallback) {
     process.exit(1);
   }
   sessions = [];
-  browsers.forEach(function (b) {
-    var browser = WebBrowser.create(b);
-    var startUrl = getServerBaseAddress() + url +
-      '?browser=' + encodeURIComponent(b.name) +
-      '&manifestFile=' + encodeURIComponent('/test/' + options.manifestFile) +
-      '&testFilter=' + JSON.stringify(options.testfilter) +
-      '&path=' + encodeURIComponent(b.path) +
-      '&delay=' + options.statsDelay +
-      '&masterMode=' + options.masterMode;
-    browser.start(startUrl);
-    var session = {
-      name: b.name,
-      config: b,
-      browser: browser,
-      closed: false,
-    };
-    if (initSessionCallback) {
-      initSessionCallback(session);
-    }
-    sessions.push(session);
-  });
+  try{
+    browsers.forEach(function (b) {
+      var browser = WebBrowser.create(b);
+      var startUrl = getServerBaseAddress() + url +
+        '?browser=' + encodeURIComponent(b.name) +
+        '&manifestFile=' + encodeURIComponent('/test/' + options.manifestFile) +
+        '&testFilter=' + JSON.stringify(options.testfilter) +
+        '&path=' + encodeURIComponent(b.path) +
+        '&delay=' + options.statsDelay +
+        '&masterMode=' + options.masterMode;
+      browser.start(startUrl);
+      var session = {
+        name: b.name,
+        config: b,
+        browser: browser,
+        closed: false,
+      };
+      if (initSessionCallback) {
+        initSessionCallback(session);
+      }
+      sessions.push(session);
+    });
+  }
+  catch(e){
+    console.log(e)
+  }
 }
 
 function getServerBaseAddress() {

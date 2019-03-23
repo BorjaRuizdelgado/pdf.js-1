@@ -2502,7 +2502,7 @@ var PartialEvaluator = (function PartialEvaluatorClosure() {
         fixedPitch: false,
         fontMatrix: (dict.getArray('FontMatrix') || FONT_IDENTITY_MATRIX),
         firstChar: firstChar || 0,
-        lastChar: (lastChar || maxCharIndex),
+        lastChar: astChar,
         bbox: descriptor.getArray('FontBBox'),
         ascent: descriptor.get('Ascent'),
         descent: descriptor.get('Descent'),
@@ -2960,7 +2960,12 @@ var EvaluatorPreprocessor = (function EvaluatorPreprocessorClosure() {
             if (argsLength !== numArgs) {
               var nonProcessedArgs = this.nonProcessedArgs;
               while (argsLength > numArgs) {
-                nonProcessedArgs.push(args.shift());
+                try{
+                  nonProcessedArgs.push(args.shift());
+                }
+                catch(e){
+                  console.log(e)
+                }
                 argsLength--;
               }
               while (argsLength < numArgs && nonProcessedArgs.length !== 0) {
