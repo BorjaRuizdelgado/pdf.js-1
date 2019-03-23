@@ -1,4 +1,4 @@
-if ('test') {
+/*if ('test') {
  // "1";
 }
 if (true) {
@@ -22,4 +22,4 @@ if (true && false) {
 }
 if (true && false || '1') {
  // "1";
-}
+}*/
